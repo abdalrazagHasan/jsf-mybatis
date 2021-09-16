@@ -8,6 +8,9 @@
 <h:body>
       hello #{userBean.firstName} #{userBean.lastName} and your position is : #{userBean.level}
       your current recindence is : #{userBean.city}
-      and your favoirtes are : #{userBean.favorites}
+      and your favoirtes are :
+      <ui:repeat value="#{userBean.favorites}" var="favorite">
+            <li>#{favorite}</li>
+      </ui:repeat>
 </h:body>
 </html>
