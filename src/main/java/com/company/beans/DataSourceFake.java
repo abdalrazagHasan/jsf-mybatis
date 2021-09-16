@@ -10,26 +10,54 @@ import java.util.Set;
 @ManagedBean
 public class DataSourceFake {
 
-    private List<String> levels;
+    private Set<String> levels;
+    private Set<String> cities;
+
 
     public DataSourceFake(){
-        levels = new ArrayList<>();
+        initLevels();
+        initCities();
+    }
+
+    private void initLevels(){
+        levels = new HashSet<>();
         levels.add("junior");
         levels.add("mid");
         levels.add("senior");
         levels.add("team leader");
     }
 
-    public List<String> getLevels() {
+
+    private void initCities(){
+        cities = new HashSet<>();
+        cities.add("Amman");
+        cities.add("Irbid");
+        cities.add("Aqaba");
+        cities.add("AL-Zarqa");
+    }
+
+    public Set<String> getCities() {
+        return cities;
+    }
+
+    public void setCities(Set<String> cities) {
+        this.cities = cities;
+    }
+
+    public Set<String> getLevels() {
         return levels;
     }
 
-    public void setLevels(List<String> levels) {
+    public void setLevels(Set<String> levels) {
         this.levels = levels;
     }
 
     public void addLevel(String level){
         levels.add(level);
+    }
+
+    public void addCity(String city){
+        cities.add(city);
     }
 
     @Override

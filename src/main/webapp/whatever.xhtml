@@ -12,6 +12,9 @@
         <h:selectOneMenu value="#{userBean.level}">
             <f:selectItems value="#{userBean.sourceFake.levels}" />
         </h:selectOneMenu>
+        <h:selectOneRadio value="#{userBean.city}">
+            <f:selectItems value="#{userBean.sourceFake.cities}" />
+        </h:selectOneRadio>
         <h:commandButton value="submit" action="home" />
     </h:form>
 

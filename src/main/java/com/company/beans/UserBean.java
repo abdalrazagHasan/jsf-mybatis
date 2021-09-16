@@ -12,6 +12,7 @@ public class UserBean {
     private String firstName;
     private String lastName;
     private String level;
+    private String city;
     private DataSourceFake sourceFake;
 
     public UserBean() {
@@ -48,5 +49,13 @@ public class UserBean {
 
     public void setLevel(String level) {
         this.level = level;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 }
