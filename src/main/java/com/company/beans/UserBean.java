@@ -1,14 +1,18 @@
 package com.company.beans;
 
 import javax.faces.bean.ManagedBean;
+import java.util.HashSet;
+import java.util.Set;
 
-@ManagedBean(name = "user")
+@ManagedBean
 public class UserBean {
 
     private String firstName;
     private String lastName;
+    private String level;
 
     public UserBean() {
+
     }
 
     public String getFirstName() {
@@ -27,11 +31,11 @@ public class UserBean {
         this.lastName = lastName;
     }
 
-    @Override
-    public String toString() {
-        return "UserBean{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
     }
 }

@@ -7,8 +7,14 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:form>
-        <h:inputText id="firstname" value="#{user.firstName}" />
-        <h:inputText id="lastname" value="#{user.lastName}" />
+        <h:inputText id="firstname" value="#{userBean.firstName}" />
+        <h:inputText id="lastname" value="#{userBean.lastName}" />
+        <h:selectOneMenu value="#{userBean.level}">
+            <f:selectItem itemValue="junior" itemLabel="junior" />
+            <f:selectItem itemValue="mid" itemLabel="mid" />
+            <f:selectItem itemValue="senior" itemLabel="senior" />
+            <f:selectItem itemValue="team lead" itemLabel="team lead" />
+        </h:selectOneMenu>
         <h:commandButton value="submit" action="home" />
     </h:form>
 
