@@ -16,11 +16,16 @@
 
    <!-- Registeration User form -->
    <h:form>
-
       <h:inputText required="true" id="firstname" label="firstname"  value="#{userBean.firstName}" /> <br />
          <h:message for="firstname" styleClass="error" title="firstname is required" /> <br />
       <h:inputText required="true" label="lastname" id="lastname" value="#{userBean.lastName}" /> <br />
-         <h:message for="firstname" styleClass="error" title="lastName is required" /> <br />
+         <h:message for="lastname" styleClass="error" title="lastName is required" /> <br />
+      <h:inputText required="true" label="email" id="email" value="#{userBean.email}" /> <br />
+         <h:message for="email" styleClass="error" title="email is required" /> <br />
+      <h:inputSecret required="true" id="password"  label="password" value="#{userBean.password}">
+         <f:validateLength minimum="5" />
+      </h:inputSecret> <br />
+      <h:message for="password" styleClass="error" title="password is required" /> <br />
       <h:commandButton value="submit" />
    </h:form>
 </h:body>
