@@ -15,8 +15,9 @@
 <h:body>
 
    <!-- Registeration User form -->
-   <h:form>
 
+   <h:form>
+      <h:outputLabel title="firstname" />
       <h:inputText required="true" id="firstname" label="firstname"  value="#{userBean.firstName}" /> <br />
          <h:message for="firstname" styleClass="error" title="firstname is required" /> <br />
 
@@ -26,6 +27,10 @@
       <h:inputText required="true" label="email" id="email" value="#{userBean.email}" /> <br />
          <h:message for="email" styleClass="error" title="email is required" /> <br />
 
+      <h:inputText required="true" label="username" id="username" value="#{userBean.username}" validator="#{userBean.validate}" />
+      <br />
+      <h:message for="username" styleClass="error" /><br />
+
       <h:inputSecret required="true" id="password"  label="password" value="#{userBean.password}">
          <f:validateLength minimum="5" />
 
@@ -33,14 +38,13 @@
          <h:message for="password" styleClass="error" title="password is required" /> <br />
 
       <h:inputText required="true" id="phoneNumber" label="Phone Number" validatorMessage="Phone Number must follow xxx-xxx-xxxx"
-                   value="#{userBean.phoneNumber}">
-         <f:validateRegex pattern="\d{3}-\d{3}-\d{4}" />
+                   value="#{userBean.phoneNumber}"><br />
+         <f:validateRegex pattern="\d{3}-\d{3}-\d{4}" /><br />
       </h:inputText><br />
 
       <h:message for="phoneNumber" styleClass="error" title="phonenumber is required" /> <br />
 
       <h:commandButton value="submit" action="whatever" />
-
    </h:form>
 </h:body>
 </html>

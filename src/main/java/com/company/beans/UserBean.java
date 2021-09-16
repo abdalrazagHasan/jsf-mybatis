@@ -1,18 +1,24 @@
 package com.company.beans;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.Validator;
+import javax.faces.validator.ValidatorException;
 import javax.inject.Inject;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 @ManagedBean
-public class UserBean {
+public class UserBean implements Validator {
 
     private String firstName;
     private String lastName;
     private String email;
+    private String username;
     private String password;
     private String level;
     private String city;
@@ -95,5 +101,28 @@ public class UserBean {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public void validate(FacesContext facesContext, UIComponent uiComponent, Object value) throws ValidatorException {
+
+        if (value == null) return;
+
+        String date = value.toString();
+
+        if (Character.isDigit(date.charAt(0))){
+            FacesMessage message = new FacesMessage("username should not start with numbers");
+
+            throw new ValidatorException(message);
+        }
+
     }
 }
