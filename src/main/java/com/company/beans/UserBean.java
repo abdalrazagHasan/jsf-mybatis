@@ -16,6 +16,7 @@ public class UserBean {
     private String password;
     private String level;
     private String city;
+    private String phoneNumber;
     private Set<String> favorites;
     private DataSourceFake sourceFake;
 
@@ -86,5 +87,13 @@ public class UserBean {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
