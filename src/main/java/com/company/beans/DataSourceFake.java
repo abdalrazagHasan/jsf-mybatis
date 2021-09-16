@@ -12,11 +12,13 @@ public class DataSourceFake {
 
     private Set<String> levels;
     private Set<String> cities;
+    private Set<String> tags;
 
 
     public DataSourceFake(){
         initLevels();
         initCities();
+        initTags();
     }
 
     private void initLevels(){
@@ -34,6 +36,15 @@ public class DataSourceFake {
         cities.add("Irbid");
         cities.add("Aqaba");
         cities.add("AL-Zarqa");
+    }
+
+    private void initTags(){
+        tags = new HashSet<>();
+        tags.add("sport");
+        tags.add("health");
+        tags.add("movies");
+        tags.add("news");
+        tags.add("since");
     }
 
     public Set<String> getCities() {
@@ -58,6 +69,18 @@ public class DataSourceFake {
 
     public void addCity(String city){
         cities.add(city);
+    }
+
+    public Set<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(Set<String> tags) {
+        this.tags = tags;
+    }
+
+    public void addTag(String tag){
+        this.tags.add(tag);
     }
 
     @Override

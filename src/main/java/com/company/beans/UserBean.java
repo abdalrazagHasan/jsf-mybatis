@@ -13,10 +13,12 @@ public class UserBean {
     private String lastName;
     private String level;
     private String city;
+    private Set<String> favorites;
     private DataSourceFake sourceFake;
 
     public UserBean() {
         this.sourceFake = new DataSourceFake();
+        this.favorites = new HashSet<>();
     }
 
     public void setSourceFake(DataSourceFake sourceFake) {
@@ -57,5 +59,13 @@ public class UserBean {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public Set<String> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(Set<String> favorites) {
+        this.favorites = favorites;
     }
 }
