@@ -7,7 +7,8 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:form>
-        <h:inputText id="firstName" value="#{firstNameUser}" />
+        <h:inputText id="firstname" value="#{user.firstName}" />
+        <h:inputText id="lastname" value="#{user.lastName}" />
         <h:commandButton value="submit" action="home" />
     </h:form>
 
