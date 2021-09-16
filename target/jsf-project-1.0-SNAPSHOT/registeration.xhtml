@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   <h:head>
+      <style type="text/css">
+         .error {
+            color: red;
+         }
+      </style>
+   </h:head>
+<h:body>
+
+   <!-- Registeration User form -->
+   <h:form>
+
+      <h:inputText required="true" id="firstname" label="firstname" value="#{userBean.firstName}" /> <br />
+         <h:message for="firstname" styleClass="error" title="firstname is required" /> <br />
+      <h:inputText required="true" label="lastname" id="lastname" value="#{userBean.lastName}" /> <br />
+         <h:message for="firstname" styleClass="error" title="lastName is required" /> <br />
+      <h:commandButton value="submit" />
+   </h:form>
+</h:body>
+</html>

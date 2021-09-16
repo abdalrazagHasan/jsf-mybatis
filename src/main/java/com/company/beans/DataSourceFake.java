@@ -8,17 +8,20 @@ import java.util.List;
 import java.util.Set;
 
 @ManagedBean
+@ApplicationScoped
 public class DataSourceFake {
 
     private Set<String> levels;
     private Set<String> cities;
     private Set<String> tags;
+    private Set<UserBean> userBeans;
 
 
     public DataSourceFake(){
         initLevels();
         initCities();
         initTags();
+        userBeans = new HashSet<>();
     }
 
     private void initLevels(){
@@ -81,6 +84,14 @@ public class DataSourceFake {
 
     public void addTag(String tag){
         this.tags.add(tag);
+    }
+
+    public Set<UserBean> getUserBeans() {
+        return userBeans;
+    }
+
+    public void setUserBeans(Set<UserBean> userBeans) {
+        this.userBeans = userBeans;
     }
 
     @Override
