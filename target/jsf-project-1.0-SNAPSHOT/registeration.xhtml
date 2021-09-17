@@ -42,9 +42,13 @@
          <f:validateRegex pattern="\d{3}-\d{3}-\d{4}" /><br />
       </h:inputText><br />
 
+      <h:selectOneMenu required="true" value="#{userBean.userType}">
+         <f:selectItems value="#{userBean.sourceFake.userTypes}" />
+      </h:selectOneMenu>
+
       <h:message for="phoneNumber" styleClass="error" title="phonenumber is required" /> <br />
 
-      <h:commandButton value="submit" action="whatever" />
+      <h:commandButton value="submit" action="#{userBean.getView()}" />
    </h:form>
 </h:body>
 </html>

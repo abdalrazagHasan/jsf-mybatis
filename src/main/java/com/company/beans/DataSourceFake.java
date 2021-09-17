@@ -15,12 +15,14 @@ public class DataSourceFake {
     private Set<String> cities;
     private Set<String> tags;
     private Set<UserBean> userBeans;
+    private Set<String> userTypes;
 
 
     public DataSourceFake(){
         initLevels();
         initCities();
         initTags();
+        initUserTypes();
         userBeans = new HashSet<>();
     }
 
@@ -48,6 +50,12 @@ public class DataSourceFake {
         tags.add("movies");
         tags.add("news");
         tags.add("since");
+    }
+
+    private void initUserTypes(){
+        userTypes = new HashSet<>();
+        userTypes.add("doctor");
+        userTypes.add("patient");
     }
 
     public Set<String> getCities() {
@@ -92,6 +100,14 @@ public class DataSourceFake {
 
     public void setUserBeans(Set<UserBean> userBeans) {
         this.userBeans = userBeans;
+    }
+
+    public Set<String> getUserTypes() {
+        return userTypes;
+    }
+
+    public void setUserTypes(Set<String> userTypes) {
+        this.userTypes = userTypes;
     }
 
     @Override

@@ -11,9 +11,10 @@ import javax.inject.Inject;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 @ManagedBean
-public class UserBean implements Validator {
+public class UserBean implements Validator<String> {
 
     private String firstName;
     private String lastName;
@@ -23,6 +24,7 @@ public class UserBean implements Validator {
     private String level;
     private String city;
     private String phoneNumber;
+    private String userType;
     private Set<String> favorites;
     private DataSourceFake sourceFake;
 
@@ -111,15 +113,26 @@ public class UserBean implements Validator {
         this.username = username;
     }
 
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public String getView(){
+        if (userType.equals("doctor")) return "dashboard";
+        return "whatever";
+    }
+
     @Override
-    public void validate(FacesContext facesContext, UIComponent uiComponent, Object value) throws ValidatorException {
+    public void validate(FacesContext facesContext, UIComponent uiComponent, String value) throws ValidatorException {
 
         if (value == null) return;
 
-        String date = value.toString();
-
-        if (Character.isDigit(date.charAt(0))){
-            FacesMessage message = new FacesMessage("username should not start with numbers");
+        if (!Character.isAlphabetic(value.charAt(0))){
+            FacesMessage message = new FacesMessage("username should start with alphabetic");
 
             throw new ValidatorException(message);
         }
