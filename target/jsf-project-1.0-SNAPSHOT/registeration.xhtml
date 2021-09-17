@@ -6,11 +6,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
    <h:head>
-      <style type="text/css">
-         .error {
-            color: red;
-         }
-      </style>
+      <h:outputStylesheet library="css" name="form.css" />
    </h:head>
 <h:body>
 
@@ -39,7 +35,6 @@
 
       <h:inputSecret required="true" id="password"  label="password" value="#{userBean.password}">
          <f:validateLength minimum="5" />
-
       </h:inputSecret> <br />
          <h:message for="password" styleClass="error" title="password is required" /> <br />
 
