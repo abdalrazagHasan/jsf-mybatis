@@ -24,16 +24,21 @@
       <h:inputText required="true" label="lastname" id="lastname" value="#{userBean.lastName}" /> <br />
          <h:message for="lastname" styleClass="error" title="lastName is required" /> <br />
 
-      <h:inputText required="true" label="email" id="email" value="#{userBean.email}" /> <br />
+      <h:inputText required="true" label="email" id="email" value="#{userBean.email}">
+            <f:attribute name="email" value="#{userBean.email}" />
+            <f:validator validatorId="com.company.validations.EmailValidator" />
+      </h:inputText><br />
          <h:message for="email" styleClass="error" title="email is required" /> <br />
 
-      <h:inputText required="true" label="username" id="username" value="#{userBean.username}" validator="#{userBean.validate}" />
+      <h:inputText required="true" label="username" id="username" value="#{userBean.username}">
+          <f:attribute name="username" value="#{userBean.username}" />
+          <f:validator validatorId="com.company.validations.UsernameValidator" />
+      </h:inputText>
       <br />
-      <h:message for="username" styleClass="error" /><br />
+        <h:message for="username" styleClass="error" /><br />
 
       <h:inputSecret required="true" id="password"  label="password" value="#{userBean.password}">
          <f:validateLength minimum="5" />
-
       </h:inputSecret> <br />
          <h:message for="password" styleClass="error" title="password is required" /> <br />
 

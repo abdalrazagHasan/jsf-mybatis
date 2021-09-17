@@ -4,6 +4,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.component.UIComponent;
+import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
@@ -14,7 +15,7 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 @ManagedBean
-public class UserBean implements Validator<String> {
+public class UserBean {
 
     private String firstName;
     private String lastName;
@@ -126,16 +127,5 @@ public class UserBean implements Validator<String> {
         return "whatever";
     }
 
-    @Override
-    public void validate(FacesContext facesContext, UIComponent uiComponent, String value) throws ValidatorException {
 
-        if (value == null) return;
-
-        if (!Character.isAlphabetic(value.charAt(0))){
-            FacesMessage message = new FacesMessage("username should start with alphabetic");
-
-            throw new ValidatorException(message);
-        }
-
-    }
 }
