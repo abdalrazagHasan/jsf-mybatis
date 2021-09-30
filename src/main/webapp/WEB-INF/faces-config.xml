@@ -7,8 +7,8 @@
     <navigation-rule>
         <from-view-id>login.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{login.check}</from-action>
             <from-outcome>success</from-outcome>
+            <if>#{login.username.equalsIgnoreCase("admin")}</if>
             <to-view-id>success.html</to-view-id>
             <redirect />
         </navigation-case>
