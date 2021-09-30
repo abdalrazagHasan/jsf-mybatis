@@ -13,8 +13,8 @@
 
     <h:body>
         <h:form>
-            <p:inputText type="email" value="#{userBean.email}" title="email"/>
-            <p:commandButton ajax="false" value="send"  action="home?faces-redirect=true" />
+            <p:inputTextarea rows="7" cols="50" completeMethod="#{studentBean.autoComplete}" value="#{studentBean.opinion}" queryDelay="100" />
+            <p:commandButton ajax="false" value="send"  action="home" />
         </h:form>
     </h:body>
 
