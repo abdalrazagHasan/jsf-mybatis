@@ -13,8 +13,9 @@
 
     <h:body>
         <h:form>
-            <p:inputTextarea rows="7" cols="50" completeMethod="#{studentBean.autoComplete}" value="#{studentBean.opinion}" queryDelay="100" />
+            <p:inputTextarea rows="7" cols="50" maxlength="100" counter="display" completeMethod="#{studentBean.autoComplete}" value="#{studentBean.opinion}" queryDelay="100" />
             <p:commandButton ajax="false" value="send"  action="home" />
+            <h:outputText id="display" />
         </h:form>
     </h:body>
 
