@@ -4,19 +4,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui"
->
-    <h:head>
-        <title>dashboard</title>
-    </h:head>
-
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:body>
         <h:form>
-                <h:inputText converterMessage="name length must be more than 5 " converter="myConvertor" />
-                <h:outputText value="#{studentBean.name}" />
-               <h:commandButton value="click"/>
+            <h:inputText value="#{login.username}" maxlength="5" />
+            <h:inputSecret value="#{login.password}" />
+            <h:commandButton value="login" action="#{login.check}" />
         </h:form>
     </h:body>
-
 </html>
