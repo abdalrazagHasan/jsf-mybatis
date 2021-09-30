@@ -25,6 +25,9 @@
                 <p:selectBooleanButton id="button" value="#{studentBean.accepted}" onLabel="true" offLabel="false">
                     <p:ajax update="msg" listener="#{studentBean.acceptTerms}" />
                 </p:selectBooleanButton>
+                <p:selectBooleanCheckbox id="chk" value="#{studentBean.accepted}" itemLabel="do you have a problem ?">
+                    <p:ajax update="msg" listener="#{studentBean.addMessage}"/>
+                </p:selectBooleanCheckbox>
                 <h:outputText id="display" />
             </p:panelGrid>
         </h:form>

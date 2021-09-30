@@ -45,4 +45,9 @@ public class StudentBean implements Serializable {
         String details = isAccepted ? "accepted" : "not accepted";
         FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(details));
     }
+
+    public void addMessage(){
+        FacesContext.getCurrentInstance()
+                .addMessage(null,new FacesMessage(isAccepted?"write it in the box" : "great"));
+    }
 }
