@@ -6,13 +6,6 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:body>
-      hello #{userBean.firstName} #{userBean.lastName} and your position is : #{userBean.level}
-      your current recindence is : #{userBean.city}
-      and your favoirtes are :
-      <ul>
-            <ui:repeat value="#{userBean.favorites}" var="favorite">
-                  <li>#{favorite}</li>
-            </ui:repeat>
-      </ul>
+    <h1>#{userBean.email}</h1>
 </h:body>
 </html>
