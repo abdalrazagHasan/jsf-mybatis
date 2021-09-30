@@ -15,7 +15,7 @@
         <h:form>
             <p:growl id="msg" sticky="true" />
             <h:outputText value="I accept the policty" />
-            <p:panelGrid columns="2" >
+            <p:panelGrid columns="1" >
                 <p:inputTextarea rows="7" cols="50" maxlength="100" counter="display" completeMethod="#{studentBean.autoComplete}"
                                  counterTemplate="{0} charecter remining"
                                  value="#{studentBean.opinion}" queryDelay="100" />
@@ -25,7 +25,7 @@
                 <p:selectBooleanButton id="button" value="#{studentBean.accepted}" onLabel="true" offLabel="false">
                     <p:ajax update="msg" listener="#{studentBean.acceptTerms}" />
                 </p:selectBooleanButton>
-                <p:selectBooleanCheckbox id="chk" value="#{studentBean.accepted}" itemLabel="do you have a problem ?">
+                <p:selectBooleanCheckbox id="chk" value="#{studentBean.haveProblem}" itemLabel="do you have a problem ?">
                     <p:ajax update="msg" listener="#{studentBean.addMessage}"/>
                 </p:selectBooleanCheckbox>
                 <h:outputText id="display" />

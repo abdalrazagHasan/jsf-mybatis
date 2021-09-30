@@ -13,6 +13,15 @@ public class StudentBean implements Serializable {
 
     private String opinion;
     private boolean isAccepted;
+    private boolean haveProblem;
+
+    public boolean isHaveProblem() {
+        return haveProblem;
+    }
+
+    public void setHaveProblem(boolean haveProblem) {
+        this.haveProblem = haveProblem;
+    }
 
     public String getOpinion() {
         return opinion;
@@ -48,6 +57,6 @@ public class StudentBean implements Serializable {
 
     public void addMessage(){
         FacesContext.getCurrentInstance()
-                .addMessage(null,new FacesMessage(isAccepted?"write it in the box" : "great"));
+                .addMessage(null,new FacesMessage(haveProblem ? " write it in the box" : "great"));
     }
 }
