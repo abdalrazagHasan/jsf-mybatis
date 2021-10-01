@@ -7,9 +7,9 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:body>
     <h:form>
-        <h:commandButton id="display" value="click">
-            <f:actionListener for="display" type="com.company.events.CustomActionListener" />
-        </h:commandButton>
+        <h:inputText onchange="this.form.submit()">
+            <f:valueChangeListener type="com.company.events.CustomValueChange"/>
+        </h:inputText>
     </h:form>
 </h:body>
 </html>
